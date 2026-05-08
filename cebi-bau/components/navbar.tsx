@@ -4,12 +4,13 @@ import { useState } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const basePath = process.env.NODE_ENV === "production" ? "/cebi_bau" : "";
 
   return (
     <header className="navbar">
       <div className="container nav-inner">
         <a href="#" className="logo">
-          <img src="/logo.png" alt="CEBI Baudienstleistungen" />
+          <img src={`${basePath}/logo.png`} alt="CEBI Baudienstleistungen" />
         </a>
 
         <nav className="nav-links">

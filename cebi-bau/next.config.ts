@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
+const repoName = "cebi_bau";
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+  basePath: `/${repoName}`,
+  assetPrefix: `/${repoName}/`,
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;

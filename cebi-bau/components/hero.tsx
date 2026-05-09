@@ -1,9 +1,11 @@
+import { ArrowRightIcon, LocationPin, PhoneIcon } from "./svgs";
+
 export default function Hero() {
   return (
     <section className="hero">
       <div className="container hero-inner">
         <div className="hero-content">
-          <p className="location">⌖ Düren & Umgebung</p>
+          <p className="location"> <LocationPin /> Düren & Umgebung</p>
 
           <h1>
             Wir bauen <br />
@@ -16,11 +18,11 @@ export default function Hero() {
           </p>
 
           <div className="hero-actions">
-            <a href="#about" className="btn btn-primary">
-              Mehr über uns →
+            <a href="#about" className="gap-4 btn btn-primary">
+              Mehr über uns <ArrowRightIcon />
             </a>
             <a href="#contact" className="btn btn-outline">
-              Kontakt ⊙
+              Kontakt <PhoneIcon />
             </a>
           </div>
         </div>
@@ -28,3 +30,4 @@ export default function Hero() {
     </section>
   );
 }
+

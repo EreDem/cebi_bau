@@ -1,21 +1,25 @@
+import { HandshakeIcon, HouseIcon, LeafIcon, StarIcon } from "./svgs";
+
+
 const features = [
   {
-    icon: "⌂",
+    icon: <HouseIcon />,
+
     title: "Regional",
     text: "In Düren und Umgebung",
   },
   {
-    icon: "☆",
+    icon: <StarIcon />,
     title: "Qualität",
     text: "Hochwertige Materialien",
   },
   {
-    icon: "♢",
+    icon: <HandshakeIcon />,
     title: "Verlässlich",
     text: "Termintreu & transparent",
   },
   {
-    icon: "♧",
+    icon: <LeafIcon />,
     title: "Nachhaltig",
     text: "Für eine bessere Zukunft",
   },

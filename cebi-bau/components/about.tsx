@@ -2,9 +2,7 @@ export default function About() {
   return (
     <section className="section about-section" id="about">
       <div className="container about-grid">
-        <div className="about-image">
-          <img src="https://picsum.photos/600/400?random=1" alt="Moderner Innenraum" />
-        </div>
+        
 
         <div className="about-content">
           <p className="eyebrow">Über uns</p>
@@ -20,6 +18,10 @@ export default function About() {
             Umgebung – mit einem erfahrenen Team, hochwertigen Materialien und
             einem klaren Anspruch: Ihre Zufriedenheit.
           </p>
+
+          <div className="about-image">
+          <img src="https://picsum.photos/600/400?random=1" alt="Moderner Innenraum" />
+        </div>
 
           <div className="stats">
             <div>

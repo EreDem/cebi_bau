@@ -1,3 +1,5 @@
+
+
 const services = [
   {
     title: "Innenausbau",
@@ -44,8 +46,8 @@ export default function Services() {
           {services.map((service) => (
             <article className="service-card" key={service.title}>
               <div className="card-image">
-                <img src={service.image} alt={service.title} />
                 <span className="floating-icon">{service.icon}</span>
+                <img src={service.image} alt={service.title} />
               </div>
 
               <div className="card-body">

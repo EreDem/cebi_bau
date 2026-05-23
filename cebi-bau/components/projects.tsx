@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRef, useState } from "react";
 
 const projects = [
   "https://picsum.photos/600/400?random=1",
@@ -10,6 +11,29 @@ const projects = [
 ];
 
 export default function Projects() {
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  function handleScroll() {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const cardWidth = container.clientWidth;
+    const index = Math.round(container.scrollLeft / cardWidth);
+
+    setActiveIndex(index);
+  }
+
+  function scrollToProject(index: number) {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    container.scrollTo({
+      left: index * container.clientWidth,
+      behavior: "smooth",
+    });
+  }
+
   return (
     <section className="section" id="projects">
       <div className="container">
@@ -34,11 +58,28 @@ export default function Projects() {
           </motion.a>
         </motion.div>
 
-        <div className="projects-grid">
+        <div
+          className="projects-grid"
+          ref={scrollRef}
+          onScroll={handleScroll}
+        >
           {projects.map((image, index) => (
             <div className="project-card" key={image}>
               <img src={image} alt={`Projekt ${index + 1}`} />
             </div>
+          ))}
+        </div>
+
+        <div className="project-dots">
+          {projects.map((_, index) => (
+            <button
+              key={index}
+              className={`project-dot ${
+                activeIndex === index ? "active" : ""
+              }`}
+              onClick={() => scrollToProject(index)}
+              aria-label={`Projekt ${index + 1} anzeigen`}
+            />
           ))}
         </div>
       </div>

@@ -288,6 +288,91 @@ p {
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
 }
 
+.service-card-flip {
+  perspective: 1200px;
+  min-height: 345px;
+}
+
+.service-card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 345px;
+}
+
+
+.service-card-front,
+.service-card-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  min-height: 345px;
+  transition: transform 0.65s ease, opacity 0.2s ease;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.service-card-front {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
+.service-card-back {
+  transform: rotateY(180deg);
+  background: #3f8dcc;
+  color: white;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-card-inner.is-flipped .service-card-front {
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+
+.service-card-inner.is-flipped .service-card-back {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
+.service-card-back h3 {
+  color: white;
+  margin-bottom: 14px;
+}
+
+.service-card-back p {
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.7;
+}
+
+.back-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 22px;
+  border-radius: 999px;
+  background: white;
+  color: #3f8dcc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-link {
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: #3f8dcc;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: left;
+}
+
+.card-link-light {
+  color: white;
+}
+
 .card-image {
   height: 165px;
   position: relative;
@@ -378,22 +463,44 @@ p {
 /* Projects */
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-}
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    scrollbar-width: none;
+  }
 
-.project-card {
-  border-radius: 8px;
-  overflow: hidden;
-  height: 150px;
-}
+  .projects-grid::-webkit-scrollbar {
+    display: none;
+  }
 
-.project-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  .project-card {
+    min-width: 100%;
+    scroll-snap-align: start;
+  }
+
+  .project-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .project-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    border: none;
+    background: #c7d4e2;
+    padding: 0;
+    cursor: pointer;
+    transition: width 0.25s ease, background 0.25s ease;
+  }
+
+  .project-dot.active {
+    width: 22px;
+    background: #3f8dcc;
+  }
 
 /* Testimonials */
 

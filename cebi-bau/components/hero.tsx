@@ -1,33 +1,70 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { ArrowRightIcon, LocationPin, PhoneIcon } from "./svgs";
 
 export default function Hero() {
   return (
     <section className="hero">
       <div className="container hero-inner">
-        <div className="hero-content">
-          <p className="location"> <LocationPin /> Düren & Umgebung</p>
+        <motion.div
+          className="hero-content"
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <motion.p
+            className="location"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
+          >
+            <LocationPin /> Düren & Umgebung
+          </motion.p>
 
-          <h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.3, ease: "easeOut" }}
+          >
             Wir bauen <br />
             <span>Zukunft.</span>
-          </h1>
+          </motion.h1>
 
-          <p className="hero-text">
+          <motion.p
+            className="hero-text"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.45, ease: "easeOut" }}
+          >
             Ihr zuverlässiger Partner für Innenausbau, Sanierung und
             Handwerkslösungen in Düren und Umgebung.
-          </p>
+          </motion.p>
 
-          <div className="hero-actions">
-            <a href="#about" className="gap-4 btn btn-primary">
+          <motion.div
+            className="hero-actions"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+          >
+            <motion.a
+              href="#about"
+              className="gap-4 btn btn-primary"
+              whileTap={{ scale: 0.96 }}
+            >
               Mehr über uns <ArrowRightIcon />
-            </a>
-            <a href="#contact" className="btn btn-outline">
+            </motion.a>
+
+            <motion.a
+              href="#contact"
+              className="btn btn-outline"
+              whileTap={{ scale: 0.96 }}
+            >
               Kontakt <PhoneIcon />
-            </a>
-          </div>
-        </div>
+            </motion.a>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
 }
-

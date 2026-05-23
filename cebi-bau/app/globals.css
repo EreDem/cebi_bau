@@ -291,6 +291,7 @@ p {
 .card-image {
   height: 165px;
   position: relative;
+  overflow: hidden;
 }
 
 .card-image img {
@@ -669,7 +670,7 @@ p {
   }
 
   .hero {
-  min-height: auto;
+  min-height: calc(100svh - 80px);
   padding: 80px 0 120px;
   background:
     linear-gradient(
@@ -677,13 +678,21 @@ p {
       rgba(244, 248, 252, 0.75)
     ),
     url("https://picsum.photos/1600/900?random=1") center / cover no-repeat;
+    margin-bottom: 70px;
 }
 
   .hero-inner {
     padding-top: 0;
   }
 
-  .hero-actions,
+  .hero-actions {
+    margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  }
+
+  
   .section-header,
   .cta,
   .cta-left,

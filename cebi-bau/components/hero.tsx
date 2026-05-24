@@ -56,7 +56,7 @@ export default function Hero() {
             </motion.a>
 
             <motion.a
-              href="#contact"
+              href="#cta"
               className="btn btn-outline"
               whileTap={{ scale: 0.96 }}
             >

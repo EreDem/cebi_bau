@@ -1,6 +1,9 @@
+import { Mail, Phone } from "lucide-react";
+import { InstagramIcon, WhatsappIcon } from "./svgs";
+
 export default function CTA() {
   return (
-    <section className="container">
+    <section id="cta" className="container">
       <div className="cta">
         <div className="cta-left">
           <div className="cta-icon">☏</div>
@@ -10,8 +13,21 @@ export default function CTA() {
           </div>
         </div>
 
-        <a href="#contact" className="btn btn-light">
-          Jetzt Anfrage stellen →
+        <a href="tel:01622312911" className="btn btn-light gap-10">
+          <Phone className="" />
+          Jetzt Anrufen
+        </a>
+        <a href="https://wa.me/491622312911" className="btn btn-light">
+          <WhatsappIcon />
+          Whatsapp
+        </a>
+        <a href="mailto:info@cebi.de" className="btn btn-light">
+          <Mail className="" />
+          E-Mail
+        </a>
+        <a href="https://www.instagram.com/cebi.bau?igsh=MWFnenR1aTk5NHJ5cA==/" className="btn btn-light">
+          <InstagramIcon />
+          Instagram 
         </a>
       </div>
     </section>

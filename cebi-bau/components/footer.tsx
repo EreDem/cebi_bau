@@ -10,11 +10,11 @@ export default function Footer() {
             Handwerkslösungen in Düren und Umgebung.
           </p>
 
-          <div className="socials">
+          {/* <div className="socials">
             <a href="#">f</a>
             <a href="#">◎</a>
             <a href="#">☏</a>
-          </div>
+          </div> */}
         </div>
 
         <div>
@@ -22,17 +22,16 @@ export default function Footer() {
           <a href="#about">Über uns</a>
           <a href="#services">Leistungen</a>
           <a href="#projects">Projekte</a>
-          <a href="#process">Ablauf</a>
-          <a href="#contact">Kontakt</a>
+          <a href="#cta">Kontakt</a>
         </div>
 
-        <div>
+        {/* <div>
           <h3>Leistungen</h3>
           <a href="#">Innenausbau</a>
           <a href="#">Sanierung</a>
           <a href="#">Umbau</a>
           <a href="#">Handwerkslösungen</a>
-        </div>
+        </div> */}
 
         <div>
           <h3>Kontakt</h3>
@@ -46,7 +45,6 @@ export default function Footer() {
         <p>© 2025 CEBI Baudienstleistungen. Alle Rechte vorbehalten.</p>
         <div>
           <a href="#">Impressum</a>
-          <a href="#">Datenschutz</a>
         </div>
       </div>
     </footer>

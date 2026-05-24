@@ -64,14 +64,6 @@ export default function Services() {
             <p className="eyebrow">Unsere Leistungen</p>
             <h2>Kompetenz, die überzeugt</h2>
           </div>
-
-          <motion.a
-            href="#services"
-            className="btn btn-outline"
-            // whileTap={{ scale: 0.96 }}
-          >
-            Alle Leistungen ansehen →
-          </motion.a>
         </motion.div>
 
         <div className="card-grid services-grid">

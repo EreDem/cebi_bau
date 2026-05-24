@@ -1,7 +1,9 @@
 "use client";
 
 import { animate, motion, useInView } from "framer-motion";
+import { Award, CheckCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { ShieldCheckIcon } from "./svgs";
 
 function CountUp({
   target,
@@ -37,6 +39,27 @@ function CountUp({
     </strong>
   );
 }
+
+const stats = [
+  {
+    number: 100,
+    suffix: "+",
+    label: "Abgeschlossene Projekte",
+    icon: <CheckCircle />,
+  },
+  {
+    number: 10,
+    suffix: "+",
+    label: "Jahre Erfahrung",
+    icon: <Award />,
+  },
+  {
+    number: 100,
+    suffix: "%",
+    label: "Zufriedene Kunden",
+    icon: <ShieldCheckIcon />,
+  },
+];
 
 export default function About() {
   return (
@@ -85,9 +108,9 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.55, delay: 0.3, ease: "easeOut" }}
           >
-            Seit vielen Jahren realisieren wir Bauprojekte in Düren und
-            Umgebung – mit einem erfahrenen Team, hochwertigen Materialien und
-            einem klaren Anspruch: Ihre Zufriedenheit.
+            Seit vielen Jahren realisieren wir Bauprojekte in Düren und Umgebung
+            – mit einem erfahrenen Team, hochwertigen Materialien und einem
+            klaren Anspruch: Ihre Zufriedenheit.
           </motion.p>
 
           <motion.div
@@ -108,12 +131,9 @@ export default function About() {
           </motion.div>
 
           <div className="stats">
-            {[
-              { number: 100, suffix: "+", label: "Abgeschlossene Projekte" },
-              { number: 10, suffix: "+", label: "Jahre Erfahrung" },
-              { number: 100, suffix: "%", label: "Zufriedene Kunden" },
-            ].map((stat, index) => (
+            {stats.map((stat, index) => (
               <motion.div
+                className="stat-item"
                 key={stat.label}
                 initial={{ opacity: 0, y: 22 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -124,17 +144,22 @@ export default function About() {
                   ease: "easeOut",
                 }}
               >
-                <CountUp
-                  target={stat.number}
-                  suffix={stat.suffix}
-                  duration={1.3}
-                />
+                <div className="stat-row">
+                  <div className="stat-icon">{stat.icon}</div>
+
+                  <CountUp
+                    target={stat.number}
+                    suffix={stat.suffix}
+                    duration={1.3}
+                  />
+                </div>
+
                 <span>{stat.label}</span>
               </motion.div>
             ))}
           </div>
 
-          <motion.a
+          {/* <motion.a
             href="#about"
             className="btn btn-primary"
             initial={{ opacity: 0, y: 18 }}
@@ -144,7 +169,7 @@ export default function About() {
             whileTap={{ scale: 0.96 }}
           >
             Mehr über uns →
-          </motion.a>
+          </motion.a> */}
         </motion.div>
       </div>
     </section>

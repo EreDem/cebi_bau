@@ -443,21 +443,49 @@ p {
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin: 30px 0;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 28px;
 }
 
-.stats strong {
-  display: block;
-  color: var(--dark);
-  font-size: 1.8rem;
+.stat-item {
+  padding: 18px 16px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(63, 141, 204, 0.14);
+  box-shadow: 0 10px 30px rgba(15, 35, 55, 0.06);
 }
 
-.stats span {
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-icon {
+  color: #3f8dcc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon svg {
+  width: 30px;
+  height: 30px;
+  stroke-width: 2.1;
+}
+
+.stat-item strong {
+  font-size: 2rem;
+  line-height: 1;
+  color: #1f2937;
+}
+
+.stat-item span {
   display: block;
-  font-size: 0.82rem;
-  color: var(--muted);
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #5f6f83;
 }
 
 /* Projects */

@@ -1,11 +1,11 @@
-import Image from "next/image";
+const basePath = process.env.NODE_ENV === "production" ? "/cebi_bau" : "";
 
 export default function Footer() {
   return (
     <footer className="footer" id="contact">
       <div className="container footer-grid">
         <div>
-          <Image src="/logo.png" alt="CEBI Baudienstleistungen" width={300} height={80} style={{ width: "150px", height: "auto" }} className="footer-logo" />
+          <img src={`${basePath}/logo.png`} alt="CEBI Baudienstleistungen" style={{ width: "150px", height: "auto" }} className="footer-logo" />
           <p>
             Ihr zuverlässiger Partner für Innenausbau, Sanierung und
             Handwerkslösungen in Düren und Umgebung.

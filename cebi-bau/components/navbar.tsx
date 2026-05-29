@@ -1,7 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
+
+const basePath = process.env.NODE_ENV === "production" ? "/cebi_bau" : "";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -10,7 +11,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container nav-inner">
         <a href="#" className="logo">
-          <Image src="/logo.png" alt="CEBI Baudienstleistungen" width={300} height={80} style={{ width: "150px", height: "auto" }} />
+          <img src={`${basePath}/logo.png`} alt="CEBI Baudienstleistungen" style={{ width: "150px", height: "auto" }} />
         </a>
 
         <nav className="nav-links">

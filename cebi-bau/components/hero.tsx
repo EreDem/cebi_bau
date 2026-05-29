@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRightIcon, LocationPin, PhoneIcon } from "./svgs";
+import { ArrowRight, MapPin, Phone } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -19,7 +19,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
           >
-            <LocationPin /> Düren & Umgebung
+            <MapPin size={18} /> Düren & Umgebung
           </motion.p>
 
           <motion.h1
@@ -52,7 +52,7 @@ export default function Hero() {
               className="gap-4 btn btn-primary"
               whileTap={{ scale: 0.96 }}
             >
-              Mehr über uns <ArrowRightIcon />
+              Mehr über uns <ArrowRight size={18} />
             </motion.a>
 
             <motion.a
@@ -60,7 +60,7 @@ export default function Hero() {
               className="btn btn-outline"
               whileTap={{ scale: 0.96 }}
             >
-              Kontakt <PhoneIcon />
+              Kontakt <Phone size={18} />
             </motion.a>
           </motion.div>
         </motion.div>

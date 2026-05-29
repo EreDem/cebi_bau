@@ -1,29 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { HandshakeIcon, HouseIcon, LeafIcon, StarIcon } from "./svgs";
+import { Handshake, House, Leaf, Star } from "lucide-react";
 
 const features = [
-  {
-    icon: <HouseIcon />,
-    title: "Regional",
-    text: "In Düren und Umgebung",
-  },
-  {
-    icon: <StarIcon />,
-    title: "Qualität",
-    text: "Hochwertige Materialien",
-  },
-  {
-    icon: <HandshakeIcon />,
-    title: "Verlässlich",
-    text: "Termintreu & transparent",
-  },
-  {
-    icon: <LeafIcon />,
-    title: "Nachhaltig",
-    text: "Für eine bessere Zukunft",
-  },
+  { icon: <House size={36} />, title: "Regional", text: "In Düren und Umgebung" },
+  { icon: <Star size={36} />, title: "Qualität", text: "Hochwertige Materialien" },
+  { icon: <Handshake size={36} />, title: "Verlässlich", text: "Termintreu & transparent" },
+  { icon: <Leaf size={36} />, title: "Nachhaltig", text: "Für eine bessere Zukunft" },
 ];
 
 export default function FeatureBar() {
@@ -43,11 +27,7 @@ export default function FeatureBar() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.45 }}
-            transition={{
-              duration: 0.45,
-              delay: index * 0.12,
-              ease: "easeOut",
-            }}
+            transition={{ duration: 0.45, delay: index * 0.12, ease: "easeOut" }}
             whileTap={{ scale: 0.98 }}
           >
             <motion.div
@@ -55,11 +35,7 @@ export default function FeatureBar() {
               initial={{ opacity: 0, scale: 0.85 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{
-                duration: 0.35,
-                delay: index * 0.12 + 0.1,
-                ease: "easeOut",
-              }}
+              transition={{ duration: 0.35, delay: index * 0.12 + 0.1, ease: "easeOut" }}
             >
               {item.icon}
             </motion.div>

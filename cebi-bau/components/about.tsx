@@ -1,9 +1,8 @@
 "use client";
 
 import { animate, motion, useInView } from "framer-motion";
-import { Award, CheckCircle } from "lucide-react";
+import { Award, CheckCircle, ShieldCheck } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { ShieldCheckIcon } from "./svgs";
 
 function CountUp({
   target,
@@ -57,7 +56,7 @@ const stats = [
     number: 100,
     suffix: "%",
     label: "Zufriedene Kunden",
-    icon: <ShieldCheckIcon />,
+    icon: <ShieldCheck />,
   },
 ];
 
@@ -65,13 +64,8 @@ export default function About() {
   return (
     <section className="section about-section" id="about">
       <div className="container about-grid">
-        <motion.div
-          className="about-content"
-          initial={{ opacity: 0, y: 34 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
+
+        <div className="about-heading">
           <motion.p
             className="eyebrow"
             initial={{ opacity: 0, y: 14 }}
@@ -90,7 +84,28 @@ export default function About() {
           >
             Bauen mit Leidenschaft
           </motion.h2>
+        </div>
 
+        <div className="about-aside">
+          <motion.div
+            className="about-image"
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.65, delay: 0.35, ease: "easeOut" }}
+          >
+            <motion.img
+              src="https://picsum.photos/600/400?random=1"
+              alt="Moderner Innenraum"
+              initial={{ scale: 1.08 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, delay: 0.35, ease: "easeOut" }}
+            />
+          </motion.div>
+        </div>
+
+        <div className="about-body">
           <motion.p
             className="lead"
             initial={{ opacity: 0, y: 18 }}
@@ -112,23 +127,6 @@ export default function About() {
             – mit einem erfahrenen Team, hochwertigen Materialien und einem
             klaren Anspruch: Ihre Zufriedenheit.
           </motion.p>
-
-          <motion.div
-            className="about-image"
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.65, delay: 0.35, ease: "easeOut" }}
-          >
-            <motion.img
-              src="https://picsum.photos/600/400?random=1"
-              alt="Moderner Innenraum"
-              initial={{ scale: 1.08 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9, delay: 0.35, ease: "easeOut" }}
-            />
-          </motion.div>
 
           <div className="stats">
             {stats.map((stat, index) => (
@@ -158,19 +156,8 @@ export default function About() {
               </motion.div>
             ))}
           </div>
+        </div>
 
-          {/* <motion.a
-            href="#about"
-            className="btn btn-primary"
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
-            whileTap={{ scale: 0.96 }}
-          >
-            Mehr über uns →
-          </motion.a> */}
-        </motion.div>
       </div>
     </section>
   );

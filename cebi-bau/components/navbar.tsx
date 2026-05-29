@@ -1,23 +1,22 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const basePath = process.env.NODE_ENV === "production" ? "/cebi_bau" : "";
 
   return (
     <header className="navbar">
       <div className="container nav-inner">
         <a href="#" className="logo">
-          <img src={`${basePath}/logo.png`} alt="CEBI Baudienstleistungen" />
+          <Image src="/logo.png" alt="CEBI Baudienstleistungen" width={300} height={80} style={{ width: "150px", height: "auto" }} />
         </a>
 
         <nav className="nav-links">
           <a href="#about">Über uns</a>
           <a href="#services">Leistungen</a>
           <a href="#projects">Projekte</a>
-          <a href="#process">Ablauf</a>
           <a href="#contact">Kontakt</a>
         </nav>
 
@@ -28,7 +27,8 @@ export default function Navbar() {
         <button
           className="menu-toggle"
           type="button"
-          aria-label="Menü öffnen"
+          aria-label={open ? "Menü schließen" : "Menü öffnen"}
+          aria-expanded={open}
           onClick={() => setOpen(!open)}
         >
           <span></span>
@@ -41,7 +41,6 @@ export default function Navbar() {
         <a href="#about" onClick={() => setOpen(false)}>Über uns</a>
         <a href="#services" onClick={() => setOpen(false)}>Leistungen</a>
         <a href="#projects" onClick={() => setOpen(false)}>Projekte</a>
-        <a href="#process" onClick={() => setOpen(false)}>Ablauf</a>
         <a href="#contact" onClick={() => setOpen(false)}>Kontakt</a>
         <a href="#contact" className="btn btn-primary" onClick={() => setOpen(false)}>
           Kontakt aufnehmen

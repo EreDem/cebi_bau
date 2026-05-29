@@ -1,20 +1,15 @@
+import Image from "next/image";
+
 export default function Footer() {
-  const basePath = process.env.NODE_ENV === "production" ? "/cebi_bau" : "";
   return (
     <footer className="footer" id="contact">
       <div className="container footer-grid">
         <div>
-          <img src={`${basePath}/logo.png`} alt="CEBI Baudienstleistungen" className="footer-logo" />
+          <Image src="/logo.png" alt="CEBI Baudienstleistungen" width={300} height={80} style={{ width: "150px", height: "auto" }} className="footer-logo" />
           <p>
             Ihr zuverlässiger Partner für Innenausbau, Sanierung und
             Handwerkslösungen in Düren und Umgebung.
           </p>
-
-          {/* <div className="socials">
-            <a href="#">f</a>
-            <a href="#">◎</a>
-            <a href="#">☏</a>
-          </div> */}
         </div>
 
         <div>
@@ -25,19 +20,11 @@ export default function Footer() {
           <a href="#cta">Kontakt</a>
         </div>
 
-        {/* <div>
-          <h3>Leistungen</h3>
-          <a href="#">Innenausbau</a>
-          <a href="#">Sanierung</a>
-          <a href="#">Umbau</a>
-          <a href="#">Handwerkslösungen</a>
-        </div> */}
-
         <div>
           <h3>Kontakt</h3>
           <p>CEBI Baudienstleistungen<br />Düren & Umgebung</p>
-          <p>+49 176 84162018</p>
-          <p>info@cebi-baudienstleistungen.de</p>
+          <p>+49 162 2312911</p>
+          <p>info@cebi.de</p>
         </div>
       </div>
 

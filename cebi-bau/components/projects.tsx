@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const projects = [
   "https://picsum.photos/600/400?random=1",
@@ -13,23 +13,43 @@ const projects = [
 export default function Projects() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [dotCount, setDotCount] = useState(projects.length);
+
+  useEffect(() => {
+    function updateDotCount() {
+      const container = scrollRef.current;
+      if (!container) return;
+      const firstCard = container.firstElementChild as HTMLElement;
+      const cardWidth = firstCard?.offsetWidth;
+      if (!cardWidth) return;
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      setDotCount(Math.floor(maxScroll / cardWidth) + 1);
+    }
+
+    updateDotCount();
+    window.addEventListener("resize", updateDotCount);
+    return () => window.removeEventListener("resize", updateDotCount);
+  }, []);
+
+  function getCardWidth() {
+    const container = scrollRef.current;
+    if (!container) return 0;
+    const firstCard = container.firstElementChild as HTMLElement;
+    return firstCard?.offsetWidth ?? container.clientWidth;
+  }
 
   function handleScroll() {
     const container = scrollRef.current;
     if (!container) return;
-
-    const cardWidth = container.clientWidth;
-    const index = Math.round(container.scrollLeft / cardWidth);
-
+    const index = Math.round(container.scrollLeft / getCardWidth());
     setActiveIndex(index);
   }
 
   function scrollToProject(index: number) {
     const container = scrollRef.current;
     if (!container) return;
-
     container.scrollTo({
-      left: index * container.clientWidth,
+      left: index * getCardWidth(),
       behavior: "smooth",
     });
   }
@@ -71,12 +91,10 @@ export default function Projects() {
         </div>
 
         <div className="project-dots">
-          {projects.map((_, index) => (
+          {Array.from({ length: dotCount }, (_, index) => (
             <button
               key={index}
-              className={`project-dot ${
-                activeIndex === index ? "active" : ""
-              }`}
+              className={`project-dot ${activeIndex === index ? "active" : ""}`}
               onClick={() => scrollToProject(index)}
               aria-label={`Projekt ${index + 1} anzeigen`}
             />

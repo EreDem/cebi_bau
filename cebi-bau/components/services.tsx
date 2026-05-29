@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Hammer, HousePlus, PaintRoller, Wrench } from "lucide-react";
 import { useState } from "react";
-import { HammerIcon, HousePlusIcon, PaintRollerIcon, WrenchIcon } from "./svgs";
 
 const services = [
   {
@@ -11,7 +11,7 @@ const services = [
     details:
       "Wir übernehmen Trockenbau, Bodenarbeiten, Wandgestaltung und individuelle Innenraumlösungen. Dabei achten wir auf saubere Ausführung, hochwertige Materialien und ein Ergebnis, das zu Ihren Räumen passt.",
     image: "https://picsum.photos/600/400?random=1",
-    icon: <PaintRollerIcon />,
+    icon: <PaintRoller />,
   },
   {
     title: "Sanierung",
@@ -19,7 +19,7 @@ const services = [
     details:
       "Ob einzelne Räume oder komplette Immobilien: Wir modernisieren bestehende Bausubstanz zuverlässig und sauber. Ziel ist eine langlebige, moderne und wirtschaftlich sinnvolle Lösung.",
     image: "https://picsum.photos/600/400?random=2",
-    icon: <HammerIcon />,
+    icon: <Hammer />,
   },
   {
     title: "Umbau",
@@ -27,7 +27,7 @@ const services = [
     details:
       "Wir helfen dabei, bestehende Räume neu zu denken. Von kleinen Anpassungen bis zu größeren Umbauten sorgen wir für eine praktische und optisch stimmige Umsetzung.",
     image: "https://picsum.photos/600/400?random=3",
-    icon: <HousePlusIcon />,
+    icon: <HousePlus />,
   },
   {
     title: "Handwerkslösungen",
@@ -35,7 +35,7 @@ const services = [
     details:
       "Für verschiedene Gewerke arbeiten wir mit zuverlässigen Partnern zusammen. So erhalten Sie koordinierte Lösungen aus einer Hand und behalten den Überblick über Ihr Projekt.",
     image: "https://picsum.photos/600/400?random=4",
-    icon: <WrenchIcon />,
+    icon: <Wrench />,
   },
 ];
 

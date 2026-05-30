@@ -3,9 +3,11 @@
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 
+const basePath = process.env.NODE_ENV === "production" ? "/cebi_bau" : "";
+
 export default function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" style={{ backgroundImage: `url("${basePath}/hero.jpeg")` }}>
       <div className="container hero-inner">
         <motion.div
           className="hero-content"

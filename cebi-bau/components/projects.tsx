@@ -4,13 +4,15 @@ import { motion } from "framer-motion";
 import { ArrowRight, House, Layers, Ruler, ShieldCheck, Sparkles, Wrench } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
+const basePath = process.env.NODE_ENV === "production" ? "/cebi_bau" : "";
+
 const projects = [
   {
     category: "Treppen Sanierung",
     title: "Neuer Aufgang. Neues Gefühl.",
-    description: "Sanierung und Modernisierung einer Treppe.",
-    before: "https://picsum.photos/600/400?random=10",
-    after: "https://picsum.photos/600/400?random=11",
+    description: "Komplette Sanierung und Modernisierung einer Treppe.",
+    before: `${basePath}/Projekte/treppe_vorher.jpeg`,
+    after: `${basePath}/Projekte/treppe_nachher.jpeg`,
     highlights: [
       { icon: <Sparkles size={26} />, title: "Moderne Optik", text: "stilvoll & zeitlos" },
       { icon: <ShieldCheck size={26} />, title: "Hochwertige Verarbeitung", text: "für maximale Langlebigkeit" },
@@ -19,26 +21,38 @@ const projects = [
   },
   {
     category: "Innenausbau",
-    title: "Wohntraum. Wirklichkeit.",
-    description: "Komplette Neugestaltung eines Wohnbereichs.",
-    before: "https://picsum.photos/600/400?random=20",
-    after: "https://picsum.photos/600/400?random=21",
+    title: "Flur neu gestaltet.",
+    description: "Modernisierung und Neugestaltung eines Flurbereichs.",
+    before: `${basePath}/Projekte/flur_vorher.jpeg`,
+    after: `${basePath}/Projekte/flur_nachher.jpeg`,
     highlights: [
-      { icon: <Layers size={26} />, title: "Raumkonzept", text: "durchdacht & stimmig" },
-      { icon: <ShieldCheck size={26} />, title: "Qualitätsmaterialien", text: "langlebig & robust" },
-      { icon: <House size={26} />, title: "Wohlfühlatmosphäre", text: "zum Leben gemacht" },
+      { icon: <Layers size={26} />, title: "Raumgefühl", text: "offen & einladend" },
+      { icon: <ShieldCheck size={26} />, title: "Saubere Ausführung", text: "bis ins Detail" },
+      { icon: <House size={26} />, title: "Wohnqualität", text: "spürbar gesteigert" },
     ],
   },
   {
-    category: "Sanierung",
-    title: "Alt wird Neu.",
-    description: "Umfassende Modernisierung einer Bestandsimmobilie.",
-    before: "https://picsum.photos/600/400?random=30",
-    after: "https://picsum.photos/600/400?random=31",
+    category: "Innenausbau",
+    title: "Raum mit neuem Leben.",
+    description: "Komplette Neugestaltung eines Wohnraums.",
+    before: `${basePath}/Projekte/raum_vorher.jpeg`,
+    after: `${basePath}/Projekte/raum_nachher.jpeg`,
     highlights: [
-      { icon: <Ruler size={26} />, title: "Präzise Ausführung", text: "sauber & pünktlich" },
-      { icon: <ShieldCheck size={26} />, title: "Wertsteigerung", text: "für Ihre Immobilie" },
-      { icon: <Wrench size={26} />, title: "Fachgerechte Arbeit", text: "von Profis ausgeführt" },
+      { icon: <Ruler size={26} />, title: "Präzise Planung", text: "von A bis Z" },
+      { icon: <ShieldCheck size={26} />, title: "Qualitätsmaterialien", text: "langlebig & robust" },
+      { icon: <Sparkles size={26} />, title: "Moderne Ästhetik", text: "zeitlos & stilvoll" },
+    ],
+  },
+  {
+    category: "Dachgeschoss Ausbau",
+    title: "Mehr Raum unter dem Dach.",
+    description: "Ausbau und Modernisierung eines Dachzimmers.",
+    before: `${basePath}/Projekte/dachzimmer_vorher.jpeg`,
+    after: `${basePath}/Projekte/dachzimmer_nachher.jpeg`,
+    highlights: [
+      { icon: <Layers size={26} />, title: "Optimale Raumnutzung", text: "jeder m² zählt" },
+      { icon: <ShieldCheck size={26} />, title: "Hochwertige Dämmung", text: "Energie sparen" },
+      { icon: <House size={26} />, title: "Wohnkomfort", text: "auf neuer Ebene" },
     ],
   },
 ];

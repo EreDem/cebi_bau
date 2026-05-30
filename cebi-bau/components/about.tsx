@@ -60,6 +60,8 @@ const stats = [
   },
 ];
 
+const basePath = process.env.NODE_ENV === "production" ? "/cebi_bau" : "";
+
 export default function About() {
   return (
     <section className="section about-section" id="about">
@@ -95,7 +97,7 @@ export default function About() {
             transition={{ duration: 0.65, delay: 0.35, ease: "easeOut" }}
           >
             <motion.img
-              src="https://picsum.photos/600/400?random=1"
+              src={`${basePath}/about_us.jpg`}
               alt="Moderner Innenraum"
               initial={{ scale: 1.08 }}
               whileInView={{ scale: 1 }}

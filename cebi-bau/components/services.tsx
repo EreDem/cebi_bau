@@ -4,13 +4,15 @@ import { motion } from "framer-motion";
 import { Hammer, HousePlus, PaintRoller, Wrench } from "lucide-react";
 import { useState } from "react";
 
+const basePath = process.env.NODE_ENV === "production" ? "/cebi_bau" : "";
+
 const services = [
   {
     title: "Innenausbau",
     text: "Individuelle Lösungen für Wohn- und Geschäftsräume.",
     details:
       "Wir übernehmen Trockenbau, Bodenarbeiten, Wandgestaltung und individuelle Innenraumlösungen. Dabei achten wir auf saubere Ausführung, hochwertige Materialien und ein Ergebnis, das zu Ihren Räumen passt.",
-    image: "https://picsum.photos/600/400?random=1",
+    image: `${basePath}/Leistungen/innenausbau.jpg`,
     icon: <PaintRoller />,
   },
   {
@@ -18,7 +20,7 @@ const services = [
     text: "Wert erhalten. Modernisieren. Nachhaltig sanieren.",
     details:
       "Ob einzelne Räume oder komplette Immobilien: Wir modernisieren bestehende Bausubstanz zuverlässig und sauber. Ziel ist eine langlebige, moderne und wirtschaftlich sinnvolle Lösung.",
-    image: "https://picsum.photos/600/400?random=2",
+    image: `${basePath}/Leistungen/sanierung.jpg`,
     icon: <Hammer />,
   },
   {
@@ -26,7 +28,7 @@ const services = [
     text: "Neue Raumkonzepte für mehr Lebensqualität.",
     details:
       "Wir helfen dabei, bestehende Räume neu zu denken. Von kleinen Anpassungen bis zu größeren Umbauten sorgen wir für eine praktische und optisch stimmige Umsetzung.",
-    image: "https://picsum.photos/600/400?random=3",
+    image: `${basePath}/Leistungen/umbau.jpg`,
     icon: <HousePlus />,
   },
   {
@@ -34,7 +36,7 @@ const services = [
     text: "Ein starkes Netzwerk für Ihr Bauprojekt.",
     details:
       "Für verschiedene Gewerke arbeiten wir mit zuverlässigen Partnern zusammen. So erhalten Sie koordinierte Lösungen aus einer Hand und behalten den Überblick über Ihr Projekt.",
-    image: "https://picsum.photos/600/400?random=4",
+    image: `${basePath}/Leistungen/handwerkslösungen.jpg`,
     icon: <Wrench />,
   },
 ];
